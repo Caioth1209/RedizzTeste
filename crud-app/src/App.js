@@ -5,6 +5,7 @@ import CustomerForm from './components/customer/CustomerForm';
 import CustomerList from './components/customer/CustomerList';
 import OrderForm from './components/order/OrderForm';
 import OrderList from './components/order/OrderList';
+import NavBar from './components/navbar/NavBar';
 import { Container, Typography } from '@mui/material';
 
 const App = () => {
@@ -60,25 +61,22 @@ const App = () => {
   };
 
   return (
-    <Container>
-      <br/>
-      <Typography variant="h4">Product Management</Typography>
-      <br/>
-      <ProductForm addProduct={addProduct} />
-      <ProductList products={products} deleteProduct={deleteProduct} />
-      <br/>
+    <>
+      <NavBar />
+      <Container>
+        <Typography variant="h3">Product Management</Typography>
+        <ProductForm addProduct={addProduct} />
+        <ProductList products={products} deleteProduct={deleteProduct} />
 
-      <Typography variant="h4">Customer Management</Typography>
-      <br/>
-      <CustomerForm addCustomer={addCustomer} />
-      <CustomerList customers={customers} deleteCustomer={deleteCustomer} />
-      <br/>
+        <Typography variant="h3">Customer Management</Typography>
+        <CustomerForm addCustomer={addCustomer} />
+        <CustomerList customers={customers} deleteCustomer={deleteCustomer} />
 
-      <Typography variant="h4">Order Management</Typography>
-      <br/>
-      <OrderForm addOrder={addOrder} products={products} customers={customers} />
-      <OrderList orders={orders} deleteOrder={deleteOrder} />
-    </Container>
+        <Typography variant="h3">Order Management</Typography>
+        <OrderForm addOrder={addOrder} products={products} customers={customers} />
+        <OrderList orders={orders} deleteOrder={deleteOrder} />
+      </Container>
+    </>
   );
 };
 
