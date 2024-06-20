@@ -7,7 +7,7 @@ const OrderList = ({ orders, deleteOrder }) => {
     <List>
       {orders.map((order, index) => (
         <ListItem key={index}>
-          <ListItemText primary={`${order.customer} ordered ${order.quantity} of ${order.product}`} />
+          <ListItemText primary={`${order.customer}: ${order.quantity} ${order.product}`} />
           <IconButton edge="end" aria-label="delete" onClick={() => deleteOrder(index)}>
             <DeleteIcon />
           </IconButton>
