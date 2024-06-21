@@ -48,6 +48,7 @@ const OrderForm = ({ addOrder, products, customers }) => {
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
           fullWidth
+          type='number'
           margin="normal"
           required
         />
