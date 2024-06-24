@@ -24,7 +24,9 @@ const ProductsPage = () => {
   };
 
   const deleteProduct = (index) => {
-    setProducts(products.filter((_, i) => i !== index));
+    const updatedProducts = products.filter((_, i) => i !== index);
+    setProducts(updatedProducts);
+    localStorage.setItem('products', JSON.stringify(updatedProducts));
   };
 
   return (

@@ -24,8 +24,10 @@ const CustomersPage = () => {
   };
 
   const deleteCustomer = (index) => {
-    setCustomers(customers.filter((_, i) => i !== index));
-  };
+    const updatedCustomers = customers.filter((_, i) => i !== index);
+    setCustomers(updatedCustomers);
+    localStorage.setItem('customers', JSON.stringify(updatedCustomers));
+  };  
 
   return (
     <Container>

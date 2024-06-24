@@ -36,9 +36,10 @@ const OrdersPage = () => {
   };
 
   const deleteOrder = (index) => {
-    setOrders(orders.filter((_, i) => i !== index));
+    const updatedOrders = orders.filter((_, i) => i !== index);
+    setOrders(updatedOrders);
+    localStorage.setItem('orders', JSON.stringify(updatedOrders));
   };
-
   return (
     <Container>
       <Typography variant="h4" style={{ margin: '20px 0' }}>Order Management</Typography>

@@ -6,13 +6,16 @@ const ThemeContext = createContext();
 export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProviderWrapper = ({ children }) => {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState('dark');
 
   const theme = useMemo(
     () =>
       createTheme({
         palette: {
           mode: mode,
+          primary: {
+            main: '#1db954',
+          },
         },
       }),
     [mode]
