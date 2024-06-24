@@ -9,24 +9,26 @@ const OrdersPage = () => {
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
-    const savedOrders = JSON.parse(localStorage.getItem('orders'));
+    const savedOrders = localStorage.getItem('orders');
     if (savedOrders) {
-      setOrders(savedOrders);
+      setOrders(JSON.parse(savedOrders));
     }
 
-    const savedProducts = JSON.parse(localStorage.getItem('products'));
+    const savedProducts = localStorage.getItem('products');
     if (savedProducts) {
-      setProducts(savedProducts);
+      setProducts(JSON.parse(savedProducts));
     }
 
-    const savedCustomers = JSON.parse(localStorage.getItem('customers'));
+    const savedCustomers = localStorage.getItem('customers');
     if (savedCustomers) {
-      setCustomers(savedCustomers);
+      setCustomers(JSON.parse(savedCustomers));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('orders', JSON.stringify(orders));
+    if (orders.length > 0) {
+      localStorage.setItem('orders', JSON.stringify(orders));
+    }
   }, [orders]);
 
   const addOrder = (order) => {

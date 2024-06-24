@@ -7,14 +7,16 @@ const CustomersPage = () => {
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
-    const savedCustomers = JSON.parse(localStorage.getItem('customers'));
+    const savedCustomers = localStorage.getItem('customers');
     if (savedCustomers) {
-      setCustomers(savedCustomers);
+      setCustomers(JSON.parse(savedCustomers));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('customers', JSON.stringify(customers));
+    if (customers.length > 0) {
+      localStorage.setItem('customers', JSON.stringify(customers));
+    }
   }, [customers]);
 
   const addCustomer = (customer) => {

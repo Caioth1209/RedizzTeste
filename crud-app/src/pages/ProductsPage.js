@@ -7,14 +7,16 @@ const ProductsPage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const savedProducts = JSON.parse(localStorage.getItem('products'));
+    const savedProducts = localStorage.getItem('products');
     if (savedProducts) {
-      setProducts(savedProducts);
+      setProducts(JSON.parse(savedProducts));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('products', JSON.stringify(products));
+    if (products.length > 0) {
+      localStorage.setItem('products', JSON.stringify(products));
+    }
   }, [products]);
 
   const addProduct = (product) => {
