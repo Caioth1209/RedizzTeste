@@ -2,7 +2,7 @@
 
 #### Visão Geral do Projeto
 
-O projeto é uma aplicação web de gerenciamento de produtos, clientes e pedidos desenvolvida em React, com armazenamento de dados utilizando *localStorage*. A aplicação é composta pelas páginas `ProductsPage`, `CustomersPage` e `OrdersPage`, cada uma responsável pelo CRUD de suas respectivas entidades. A estilização é feita com Material-UI.
+O [projeto](https://redizz-teste.vercel.app/) é uma aplicação web de gerenciamento de produtos, clientes e pedidos desenvolvida em React, com armazenamento de dados utilizando *localStorage*. A aplicação é composta pelas páginas `ProductsPage`, `CustomersPage` e `OrdersPage`, cada uma responsável pelo CRUD de suas respectivas entidades. A estilização é feita com Material-UI.
 
 #### Estrutura do Projeto
 
